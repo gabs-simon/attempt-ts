@@ -1,0 +1,26 @@
+{
+  "name": "attempt-ts",
+  "version": "1.0.0-rc1",
+  "description": "Easily define types for failable operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest",
+    "build": "./node_modules/.bin/tsc"
+  },
+  "keywords": [
+    "attempt"
+  ],
+  "author": "Gabs Simon <gabs.simon@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.2",
+    "jest": "^27.0.3",
+    "prettier": "^2.3.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}
