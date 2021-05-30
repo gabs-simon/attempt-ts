@@ -8,7 +8,7 @@ It is inspired in the common `Maybe<T>` pattern in TypeScript.
 
 ## How to use
 
-```
+```typescript
 import { Attempt, Failure, Success }
 type MathError = { error : string };
 
