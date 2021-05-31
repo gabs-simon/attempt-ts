@@ -1,8 +1,6 @@
-name: Build and Test
+name: Deploy documentation
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
 
 jobs:
@@ -12,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Checkout to docs directory
+        run: cd docs
+
       - name: Install dependencies
         run: npm i -D
 
-      - name: Build the project
-        run: npm run build
-
-      - name: Run tests
-        run: npm run test
+      - name: Deploy documentation
+        run: ./node_modules/.bin/docusaurus deploy
