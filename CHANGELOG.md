@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/gabs-simon/attempt-ts/compare/v2.3.0...v2.3.1) (2021-05-31)
+
+
+### Bug Fixes
+
+* **docs:** Fixed link for Semantic Release ([35be00f](https://github.com/gabs-simon/attempt-ts/commit/35be00f69852d9a4fec15dbdd08cdd078160db41))
+
 # [2.3.0](https://github.com/gabs-simon/attempt-ts/compare/v2.2.0...v2.3.0) (2021-05-31)
 
 
