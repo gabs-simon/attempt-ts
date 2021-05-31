@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/gabs-simon/attempt-ts/compare/v2.2.0...v2.3.0) (2021-05-31)
+
+
+### Features
+
+* **docs:** Better shield images ([931f529](https://github.com/gabs-simon/attempt-ts/commit/931f52988f0f8620b459f52df5c765436e353b28))
+
 # [2.2.0](https://github.com/gabs-simon/attempt-ts/compare/v2.1.0...v2.2.0) (2021-05-31)
 
 
