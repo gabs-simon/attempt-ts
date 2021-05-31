@@ -3,30 +3,47 @@ import { Failure } from './failure'
 import { AsyncAttempt } from './async-attempt'
 
 describe('AsyncAttempt', () => {
-  it('Should correctly return value given Success', async () => {
-    const testFunction = (a: number): AsyncAttempt<string, number> =>
-      a > 0
-        ? Promise.resolve(Success<string>('yes'))
-        : Promise.reject(Failure<number>(0))
+  // Returns 'yes' if success, throws 1 if failure - just for the heck of it
+  const testFunctionPromise = (a: number): AsyncAttempt<string, number> =>
+    a > 0 ? Promise.resolve(Success('yes')) : Promise.resolve(Failure(1))
+  // Async version, does pretty much the exact same thing but written in other way
+  const testFunctionAsync = async (a: number): AsyncAttempt<string, number> => {
+    const result = Success('yes')
+    if (a > 0) return result
+    return Failure(1)
+  }
 
-    const n = testFunction(10)
+  it('Should correctly return value given Success - written as Promise', async () => {
+    const n = testFunctionPromise(10)
 
-    const result = await AsyncAttempt<string, number>(n)
+    const result = await AsyncAttempt(n)
     expect(result).toBe('yes')
   })
 
-  it('Should correctly return error given Failure', async () => {
-    const testFunction = (a: number): AsyncAttempt<string, number> =>
-      a > 0
-        ? Promise.resolve(Success<string>('yes'))
-        : Promise.reject(Failure<number>(0))
+  it('Should correctly return value given Success - written as Async', async () => {
+    const n = testFunctionAsync(10)
 
-    const n = testFunction(-1)
+    const result = await AsyncAttempt(n)
+    expect(result).toBe('yes')
+  })
+
+  it('Should correctly throw error given Failure - written as Promise', async () => {
+    const n = testFunctionPromise(-10)
 
     try {
-      await AsyncAttempt<string, number>(n)
+      await AsyncAttempt(n)
     } catch (err) {
-      expect(err).toEqual({ error: 0 })
+      expect(err).toEqual(1)
+    }
+  })
+
+  it('Should correctly throw error given Success - written as Async', async () => {
+    const n = testFunctionAsync(-10)
+
+    try {
+      await AsyncAttempt(n)
+    } catch (err) {
+      expect(err).toEqual(1)
     }
   })
 })
