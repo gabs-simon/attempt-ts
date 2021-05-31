@@ -10,11 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Checkout to docs directory
-        run: cd docs
-
       - name: Install dependencies
-        run: npm i -D
+        run: pwd && cd docs && npm i -D
 
       - name: Deploy documentation
-        run: ./node_modules/.bin/docusaurus deploy
+        run: pwd && cd docs && ./node_modules/.bin/docusaurus deploy
