@@ -7,12 +7,10 @@
     "test": "./node_modules/.bin/jest",
     "compile": "./node_modules/.bin/tsc",
     "build": "npm run clean-dist && npm run compile",
-
-    "clean-dist" : "rm -rf ./dist/*",
+    "clean-dist": "rm -rf ./dist/*",
     "tarball": "cd dist && tar -czf ../attempt-ts.tar.gz * && cd ..",
     "minify": "./node_modules/.bin/babel dist --out-file attempt-ts.min.js",
     "artifacts": "npm run minify && npm run tarball",
-
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -50,12 +48,23 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/changelog",
       "@semantic-release/release-notes-generator",
-      ["@semantic-release/github", {
-        "assets": [
-          {"path": "attempt-ts.min.js", "name": "attempt-ts-${nextRelease.gitTag}.js", "label": "attempt-ts-${nextRelease.gitTag}.js"},
-          {"path": "attempt-ts.tar.gz", "name": "attempt-ts-${nextRelease.gitTag}.tar.gz", "label": "attempt-ts-${nextRelease.gitTag}.tar.gz"}
-        ]
-      }],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "attempt-ts.min.js",
+              "name": "attempt-ts-${nextRelease.gitTag}.js",
+              "label": "attempt-ts-${nextRelease.gitTag}.js"
+            },
+            {
+              "path": "attempt-ts.tar.gz",
+              "name": "attempt-ts-${nextRelease.gitTag}.tar.gz",
+              "label": "attempt-ts-${nextRelease.gitTag}.tar.gz"
+            }
+          ]
+        }
+      ],
       "@semantic-release/npm",
       [
         "@semantic-release/git",
