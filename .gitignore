@@ -1,1 +1,5 @@
+# Dependencies
 node_modules/
+
+# Release Artifacts
+async-attempt.tar.gz

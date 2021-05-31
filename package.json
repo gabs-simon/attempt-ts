@@ -5,7 +5,14 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "build": "./node_modules/.bin/tsc",
+    "compile": "./node_modules/.bin/tsc",
+    "build": "npm run clean-dist && npm run compile",
+
+    "clean-dist" : "rm -rf ./dist/*",
+    "tarball": "cd dist && tar -czf ../attempt-ts.tar.gz * && cd ..",
+    "minify": "./node_modules/.bin/babel dist --out-file attempt-ts.min.js",
+    "artifacts": "npm run minify && npm run tarball",
+
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -14,6 +21,7 @@
   "author": "Gabs Simon <gabs.simon@outlook.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-typescript": "^7.13.0",
@@ -23,6 +31,7 @@
     "@semantic-release/npm": "^7.1.3",
     "@types/jest": "^26.0.23",
     "babel-jest": "^27.0.2",
+    "babel-preset-minify": "^0.5.1",
     "jest": "^27.0.3",
     "prettier": "^2.3.0",
     "semantic-release": "^17.4.3",
@@ -40,6 +49,13 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/changelog",
+      "@semantic-release/release-notes-generator",
+      ["@semantic-release/github", {
+        "assets": [
+          {"path": "attempt-ts.min.js", "name": "attempt-ts-${nextRelease.gitTag}.js", "label": "attempt-ts-${nextRelease.gitTag}.js"},
+          {"path": "attempt-ts.tar.gz", "name": "attempt-ts-${nextRelease.gitTag}.tar.gz", "label": "attempt-ts-${nextRelease.gitTag}.tar.gz"}
+        ]
+      }],
       "@semantic-release/npm",
       [
         "@semantic-release/git",
