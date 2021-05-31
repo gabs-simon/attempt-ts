@@ -27,7 +27,7 @@
     />
   </a>&nbsp;
 
-  <a href="https://www.npmjs.com/package/attempt-ts">
+  <a href="https://gabs-simon.github.io/attempt-ts/">
     <img
       src="https://img.shields.io/badge/docs-here-blue"
       alt="Documentation Link"
@@ -65,7 +65,7 @@
       data-canonical-src="https://img.shields.io/badge/tested_with-jest-99424f.svg"
     />
   </a>
-  
+
 </div>
 
 ---
