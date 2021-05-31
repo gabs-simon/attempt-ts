@@ -10,11 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AsyncAttempt = void 0;
+const attempt_1 = require("./attempt");
 // Calls a promise and returns its result as an Attempt
-const AsyncAttempt = (a) => __awaiter(void 0, void 0, void 0, function* () {
-    return a
-        .then((s) => s.value)
-        .catch((e) => { throw { error: e.error }; });
-});
+const AsyncAttempt = (a) => __awaiter(void 0, void 0, void 0, function* () { return a.then(attempt_1.Attempt); });
 exports.AsyncAttempt = AsyncAttempt;
 //# sourceMappingURL=async-attempt.js.map

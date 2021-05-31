@@ -1,7 +1,7 @@
-import { Failure } from "./failure";
+import { Failure } from './failure'
 
 // Defines any type of failure
-type Why<T> = T;
+type Why<T> = T
 
 // Extracts the error from a Failure
-export const Why = <F = any>(s: Failure<F>): F => s.error;
+export const Why = <F = any>(s: Failure<F>): F => s.error

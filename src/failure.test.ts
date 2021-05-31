@@ -22,7 +22,7 @@ describe('Failure', () => {
       const obj = Failure({ a: 1, b: 'str', c: [1, 2], d: {} })
       expect(obj.error.a).toBe(1)
       expect(obj.error.b).toBe('str')
-      expect(obj.error.c).toEqual([1,2])
+      expect(obj.error.c).toEqual([1, 2])
       expect(obj.error.d).toEqual({})
     })
   })

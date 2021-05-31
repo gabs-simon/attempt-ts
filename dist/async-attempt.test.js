@@ -13,24 +13,41 @@ const success_1 = require("./success");
 const failure_1 = require("./failure");
 const async_attempt_1 = require("./async-attempt");
 describe('AsyncAttempt', () => {
-    it('Should correctly return value given Success', () => __awaiter(void 0, void 0, void 0, function* () {
-        const testFunction = (a) => a > 0
-            ? Promise.resolve(success_1.Success('yes'))
-            : Promise.reject(failure_1.Failure(0));
-        const n = testFunction(10);
+    // Returns 'yes' if success, throws 1 if failure - just for the heck of it
+    const testFunctionPromise = (a) => a > 0 ? Promise.resolve(success_1.Success('yes')) : Promise.resolve(failure_1.Failure(1));
+    // Async version, does pretty much the exact same thing but written in other way
+    const testFunctionAsync = (a) => __awaiter(void 0, void 0, void 0, function* () {
+        const result = success_1.Success('yes');
+        if (a > 0)
+            return result;
+        return failure_1.Failure(1);
+    });
+    it('Should correctly return value given Success - written as Promise', () => __awaiter(void 0, void 0, void 0, function* () {
+        const n = testFunctionPromise(10);
         const result = yield async_attempt_1.AsyncAttempt(n);
         expect(result).toBe('yes');
     }));
-    it('Should correctly return error given Failure', () => __awaiter(void 0, void 0, void 0, function* () {
-        const testFunction = (a) => a > 0
-            ? Promise.resolve(success_1.Success('yes'))
-            : Promise.reject(failure_1.Failure(0));
-        const n = testFunction(-1);
+    it('Should correctly return value given Success - written as Async', () => __awaiter(void 0, void 0, void 0, function* () {
+        const n = testFunctionAsync(10);
+        const result = yield async_attempt_1.AsyncAttempt(n);
+        expect(result).toBe('yes');
+    }));
+    it('Should correctly throw error given Failure - written as Promise', () => __awaiter(void 0, void 0, void 0, function* () {
+        const n = testFunctionPromise(-10);
         try {
             yield async_attempt_1.AsyncAttempt(n);
         }
         catch (err) {
-            expect(err).toEqual({ error: 0 });
+            expect(err).toEqual(1);
+        }
+    }));
+    it('Should correctly throw error given Success - written as Async', () => __awaiter(void 0, void 0, void 0, function* () {
+        const n = testFunctionAsync(-10);
+        try {
+            yield async_attempt_1.AsyncAttempt(n);
+        }
+        catch (err) {
+            expect(err).toEqual(1);
         }
     }));
 });
