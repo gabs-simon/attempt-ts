@@ -20,7 +20,7 @@
     />
   </a> &nbsp;
 
-  <a href="https://github.com/gabs-simon/mit-license">
+  <a href="https://gabs.mit-license.org/">
     <img
       src="https://img.shields.io/npm/l/attempt-ts"
       alt="License"

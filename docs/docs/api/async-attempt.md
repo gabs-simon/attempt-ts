@@ -10,7 +10,7 @@ sidebar_label: AsyncAttempt
 
 ```typescript
 // AsyncAttempt<S,F>
-type AsyncAttempt<S = any, F = any> = Success<S> | Failure<F>
+type AsyncAttempt<S = any, F = any> = Promise<Attempt<S,F>>
 
 // Usual format of an AsyncAttempt function
 const AttemptFunction = (...params): AsyncAttempt<S, F> => {
