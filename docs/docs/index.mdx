@@ -85,22 +85,25 @@ This is a simple guide describing the most common use cases of Attempt-TS.
 ```typescript
 import { Attempt, Failure, Success }
 
+// Attempts must return either Success() or Failure() and must not throw errors
 const division = (a: number, b: number): Attempt<number,string> => {
   if (b === 0)
     return Failure("Can't divide by zero")
   return Success(a / b)
 }
 
+// Calling Attempt() on the result of an Attempt either returns the result or throws the error
 Attempt(division(6,2)) // 3
 Attempt(division(1,0)) // throws "Can't divide by zero"
 
+// AsyncAttempt behave the same way but they're async
 const asyncDivision = async (a: number, b: number): AsyncAttempt<number,string> => {
   if (b === 0)
-    return Failure("Can't divide by zero") // in AsyncAttempts you can either return or throw a failure
+    return Failure("Can't divide by zero")
   return Success(a / b)
 }
 
-
+// AsyncAttempt() also works the same way
 await AsyncAttempt(asyncDivision(6,2)) // 3
 await AsyncAttempt(asyncDivision(1,0)) // throws "Can't divide by zero"
 ```
