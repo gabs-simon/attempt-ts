@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/gabs-simon/attempt-ts/compare/v2.3.2...v2.3.3) (2021-05-31)
+
+
+### Bug Fixes
+
+* **docs:** Updated license ([78061ac](https://github.com/gabs-simon/attempt-ts/commit/78061ac356f18c4ca71d060c1a1cace4368464b3))
+
 ## [2.3.2](https://github.com/gabs-simon/attempt-ts/compare/v2.3.1...v2.3.2) (2021-05-31)
 
 

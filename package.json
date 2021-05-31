@@ -1,6 +1,6 @@
 {
   "name": "attempt-ts",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Easily define types for failable operations",
   "main": "src/index.ts",
   "scripts": {
