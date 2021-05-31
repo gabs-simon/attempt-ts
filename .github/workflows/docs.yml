@@ -10,11 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Change working directory
-        run: pwd && cd docs
-
       - name: Install dependencies
-        run: pwd && yarn install
+        run: cd docs && yarn install
 
       - name: Deploy documentation
-        run: pwd && && ./node_modules/.bin/docusaurus deploy
+        run: cd docs && ./node_modules/.bin/docusaurus deploy
