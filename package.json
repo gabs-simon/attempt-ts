@@ -1,6 +1,6 @@
 {
   "name": "attempt-ts",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Easily define types for failable operations",
   "main": "dist/index.js",
   "scripts": {

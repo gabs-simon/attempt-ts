@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/gabs-simon/attempt-ts/compare/v3.0.1...v3.0.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* **core:** Added dist files on release ([abfb420](https://github.com/gabs-simon/attempt-ts/commit/abfb420cdaad3470e5cb3f010002a38c1aa6c5d9))
+
 ## [3.0.1](https://github.com/gabs-simon/attempt-ts/compare/v3.0.0...v3.0.1) (2021-06-03)
 
 
