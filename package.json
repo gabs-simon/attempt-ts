@@ -2,7 +2,7 @@
   "name": "attempt-ts",
   "version": "2.3.3",
   "description": "Easily define types for failable operations",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "compile": "./node_modules/.bin/tsc",
