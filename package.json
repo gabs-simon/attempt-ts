@@ -17,7 +17,7 @@
     "attempt"
   ],
   "author": "Gabs Simon <gabs.simon@outlook.com>",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
