@@ -5,6 +5,7 @@
     "outDir": "dist",
     "rootDir": "./src",
     "sourceMap": true,
-    "strict": false
+    "strict": false,
+    "declaration": true,
   }
 }
