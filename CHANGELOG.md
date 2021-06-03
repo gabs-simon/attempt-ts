@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/gabs-simon/attempt-ts/compare/v2.3.3...v3.0.0) (2021-06-03)
+
+
+### Bug Fixes
+
+* **core:** Fixed export and import issues ([1c86640](https://github.com/gabs-simon/attempt-ts/commit/1c86640cf85e806383b2c8bc5e2cdd8b37e5533a))
+
+
+### Features
+
+* **core:** Updated license. ([69c08ba](https://github.com/gabs-simon/attempt-ts/commit/69c08ba0efc96f41b4e20108285701671f1e90b2))
+
+
+### BREAKING CHANGES
+
+* **core:** New license
+
 ## [2.3.3](https://github.com/gabs-simon/attempt-ts/compare/v2.3.2...v2.3.3) (2021-05-31)
 
 
