@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/gabs-simon/attempt-ts/compare/v3.0.0...v3.0.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* **core:** Fixed missing declaration files ([ac88a4b](https://github.com/gabs-simon/attempt-ts/commit/ac88a4b17158e9810175c59ae99ed88c0ff43d26))
+
 # [3.0.0](https://github.com/gabs-simon/attempt-ts/compare/v2.3.3...v3.0.0) (2021-06-03)
 
 
